@@ -3,8 +3,8 @@ import 'package:hexcolor/hexcolor.dart';
 // import 'package:pkmn_projct/screens/pkm_info.dart';
 import '../screens/my_home_page.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class PkmnApp extends StatelessWidget {
+  const PkmnApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
