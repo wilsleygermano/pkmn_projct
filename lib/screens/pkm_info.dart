@@ -118,14 +118,10 @@ class _PkmInfoState extends State<PkmInfo> {
                             0,
                             0,
                           ),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 1,
-                                width: 360,
-                                color: Colors.black,
-                              ),
-                            ],
+                          child: Container(
+                            height: 1,
+                            width: 360,
+                            color: Colors.black,
                           ),
                         ),
                         Padding(
