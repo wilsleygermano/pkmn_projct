@@ -60,10 +60,10 @@ class _PkmInfoState extends State<PkmInfo> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Container(
-                              alignment: Alignment.center,
-                              color: HexColor("#F2F2F2"),
+                              width: 300,
                               child: Text(
                                 widget.name.toUpperCase(),
                                 textAlign: TextAlign.center,
@@ -71,6 +71,7 @@ class _PkmInfoState extends State<PkmInfo> {
                                   color: HexColor("#0D0D0D"),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 26,
+                                  overflow: TextOverflow.fade
                                 ),
                               ),
                             ),
