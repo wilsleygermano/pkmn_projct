@@ -65,7 +65,7 @@ class MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     leading: Image.asset(
-                        "lib/images/${controller.allpkmns.results[index].name}.png"),
+                        "lib/images/sprites/${controller.allpkmns.results[index].name}.png"),
                     contentPadding: EdgeInsets.symmetric(horizontal: 48),
                   ),
                 );
