@@ -35,41 +35,48 @@ class MyHomePageState extends State<MyHomePage> {
         future: controller.start(),
         builder: ((context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return ListView.builder(
-              itemCount: controller.allpkmns.results.length,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: ((context) => PkmInfo(
-                            name: controller.allpkmns.results[index].name!)),
-                      ),
-                    );
-                  },
-                  splashColor: HexColor("#595959"),
-                  child: ListTile(
-                    title: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 8, 36, 8),
-                      child: Text(
-                        "${controller.allpkmns.results[index].name?.toUpperCase()}",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily:
-                              GoogleFonts.atkinsonHyperlegible().fontFamily,
-                          fontSize: 18,
-                          color: HexColor("#0D0D0D"),
-                          fontWeight: FontWeight.w600,
+            return Scrollbar(
+              isAlwaysShown: false,
+              child: ListView.builder(
+                itemCount: controller.allpkmns.results.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => PkmInfo(
+                              name: controller.allpkmns.results[index].name!)),
+                        ),
+                      );
+                    },
+                    splashColor: HexColor("#595959"),
+                    child: ListTile(
+                      title: Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 8, 36, 8),
+                        child: Text(
+                          "${controller.allpkmns.results[index].name?.toUpperCase()}",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily:
+                                GoogleFonts.atkinsonHyperlegible().fontFamily,
+                            fontSize: 18,
+                            color: HexColor("#0D0D0D"),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
+                      leading: Container(
+                        height: 50,
+                        width: 50,
+                        child: Image.asset(
+                            "lib/images/sprites/${controller.allpkmns.results[index].name}.png"),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 48),
                     ),
-                    leading: Image.asset(
-                        "lib/images/sprites/${controller.allpkmns.results[index].name}.png"),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 48),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             );
           }
           if (snapshot.connectionState == ConnectionState.none) {
