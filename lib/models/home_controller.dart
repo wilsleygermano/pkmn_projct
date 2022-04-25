@@ -7,7 +7,7 @@ class HomeController {
   HomeState state = HomeState.start;
 
   Future<void> start() async {
-    print("oi");
+    // print("oi");
     state = HomeState.loading;
 
       allpkmns = await repository.fetchAll();
