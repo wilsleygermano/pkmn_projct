@@ -68,7 +68,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                           ),
                         ),
                       ),
-                      leading: Image.asset("lib/images/${controller.allpkmns.results[pkmnFavoritesBox.values.length].name}.png"),
+                      leading: Image.asset("lib/images//sprites/${controller.allpkmns.results[pkmnFavoritesBox.values.length].name}.png"),
                       contentPadding: EdgeInsets.symmetric(horizontal: 48),
                     ),
                   );
